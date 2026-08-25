@@ -1,4 +1,4 @@
-// import './styles/main.css';
+import './styles/main.css';
 
 function initDavispediaUI() {
   // Vector 2022 personal tools / user dropdown container

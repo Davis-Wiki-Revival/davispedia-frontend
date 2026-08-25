@@ -4,6 +4,11 @@
   "author": "Davis Wiki Revival",
   "description": "Progressive enhancement UI and React widgets for Davispedia",
   "manifest_version": 2,
+
+  "AutoloadClasses": {
+    "DavispediaFrontendHooks": "includes/DavispediaFrontendHooks.php"
+  },
+
   "ResourceModules": {
     "ext.davispedia.frontend": {
       "scripts": [
@@ -15,15 +20,10 @@
       "dependencies": [
         "mediawiki.util",
         "mediawiki.api"
-      ],
-      "targets": [
-        "desktop",
-        "mobile"
       ]
     }
   },
-  "ResourceModuleSkinStyles": {},
-  "DefaultUserOptions": {},
+
   "Hooks": {
     "BeforePageDisplay": "DavispediaFrontendHooks::onBeforePageDisplay"
   }
