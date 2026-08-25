@@ -1,0 +1,1 @@
+(function(e){typeof define=="function"&&define.amd?define(e):e()})((function(){"use strict";function e(){document.querySelector(".vector-user-links")||document.getElementById("p-personal")}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",e):e()}));

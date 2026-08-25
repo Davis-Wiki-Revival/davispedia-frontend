@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Davispedia Frontend Playground</title>
+    <script>
+      // Mock global MediaWiki environment for local dev
+      window.mw = {
+        config: {
+          get: (key) => {
+            const mocks = {
+              wgUserName: 'LocalTester',
+              wgTitle: 'Main_Page',
+              wgUserIsRegistration: false,
+            };
+            return mocks[key] || null;
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Mock Vector 2022 header element to mount into -->
+    <div style="background: #f8f9fa; padding: 12px; border-bottom: 1px solid #ccc; display: flex; justify-content: flex-end;">
+      <div id="p-personal" class="vector-user-links"></div>
+    </div>
+
+    <main style="max-width: 800px; margin: 40px auto; font-family: sans-serif;">
+      <h1>Sample Wiki Article</h1>
+      <p>Frontend developers can iterate here using <code>npm run dev</code> with instant HMR.</p>
+    </main>
+
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "DavispediaFrontend",
+  "version": "1.0.0",
+  "author": "Davis Wiki Revival",
+  "description": "Progressive enhancement UI and React widgets for Davispedia",
+  "manifest_version": 2,
+  "ResourceModules": {
+    "ext.davispedia.frontend": {
+      "scripts": [
+        "dist/bundle.umd.js"
+      ],
+      "styles": [
+        "dist/bundle.css"
+      ],
+      "dependencies": [
+        "mediawiki.util",
+        "mediawiki.api"
+      ],
+      "targets": [
+        "desktop",
+        "mobile"
+      ]
+    }
+  },
+  "ResourceModuleSkinStyles": {},
+  "DefaultUserOptions": {},
+  "Hooks": {
+    "BeforePageDisplay": "DavispediaFrontendHooks::onBeforePageDisplay"
+  }
+}
