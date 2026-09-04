@@ -12,10 +12,22 @@
   "ResourceModules": {
     "ext.davispedia.frontend": {
       "scripts": [
-        "dist/bundle.umd.js"
+        "bundle.umd.js"
       ],
       "styles": [
-        "dist/bundle.css"
+        "bundle.css"
+      ],
+      "dependencies": [
+        "mediawiki.util",
+        "mediawiki.api"
+      ]
+    },
+    "ext.davispedia.cowlender": {
+      "scripts": [
+        "cowlender.umd.js"
+      ],
+      "styles": [
+        "cowlender.css"
       ],
       "dependencies": [
         "mediawiki.util",
@@ -23,6 +35,10 @@
       ]
     }
   },
+  "ResourceFileModulePaths": {
+  "localBasePath": "dist",
+  "remoteExtPath": "DavispediaFrontend/dist"
+},
 
   "Hooks": {
     "BeforePageDisplay": "DavispediaFrontendHooks::onBeforePageDisplay"
