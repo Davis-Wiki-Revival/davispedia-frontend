@@ -8,26 +8,21 @@ export default defineConfig({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
   },
   build: {
+    emptyOutDir: false,
     outDir: 'dist',
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'DavispediaFrontend',
-      fileName: () => 'bundle.umd.js',
+      entry: resolve(__dirname, 'src/cowlender/index.tsx'),
+      name: 'DavispediaCowlender',
+      fileName: () => 'cowlender.umd.js',
       formats: ['umd'],
     },
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith('.css')) return 'bundle.css';
+          if (assetInfo.name?.endsWith('.css')) return 'cowlender.css';
           return assetInfo.name || '';
         },
       },
-    },
-  },
-  server: {
-    proxy: {
-      '/api.php': 'http://localhost:8080',
-      '/rest.php': 'http://localhost:8080',
     },
   },
 });

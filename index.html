@@ -11,8 +11,10 @@
           get: (key) => {
             const mocks = {
               wgUserName: 'LocalTester',
-              wgTitle: 'Main_Page',
-              wgUserIsRegistration: false,
+              wgTitle: 'Cowlender',
+              wgCanonicalSpecialPageName: 'Cowlender',
+              wgCowlenderRestBaseUrl: '/rest.php/cowlender/v1',
+              wgScriptPath: '',
             };
             return mocks[key] || null;
           }
@@ -26,11 +28,15 @@
       <div id="p-personal" class="vector-user-links"></div>
     </div>
 
-    <main style="max-width: 800px; margin: 40px auto; font-family: sans-serif;">
-      <h1>Sample Wiki Article</h1>
-      <p>Frontend developers can iterate here using <code>npm run dev</code> with instant HMR.</p>
+    <main style="max-width: 1400px; margin: 40px auto; padding: 0 24px; font-family: sans-serif;">
+      <h1>The Cowlender</h1>
+      <p>Community events in Davis</p>
+      <div id="cowlender-root" data-cowlender-api="/rest.php/cowlender/v1">
+        Loading The Cowlender…
+      </div>
     </main>
 
-    <script type="module" src="/src/index.tsx"></script>
+    <script type="module" src="/src/index.ts"></script>
+    <script type="module" src="/src/cowlender/index.tsx"></script>
   </body>
 </html>
